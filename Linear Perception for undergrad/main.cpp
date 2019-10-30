@@ -15,6 +15,7 @@ int main()
     double nn;
     double target;
     int axis;
+    int r[N];
     float train_x [N] [d];
     double train_y[N];
     int numcorr = 0;
@@ -43,7 +44,18 @@ int main()
             {
             train_x [h] [e] = ((double)rand()) / ((double)RAND_MAX) * 0.35 + 0;
             }
+            r[h] = 0;
         }
+    
+    cout << "cluster 1" << endl;
+    for (int k = 0; k < 20; k++)
+    {
+        for (int m = 0; m < 2; m++)
+        {
+            cout << train_x[k] [m] << " ";
+        }
+        cout << endl;
+    }
     
     //Cluster 2
     for (int h = 20; h < 40; h++)
@@ -53,13 +65,15 @@ int main()
             if (e == 1)
             {
                 train_x [h] [e] = ((double) rand()) / ((double) RAND_MAX) * 1.0 + 0.70;
-                //cout << train_x [h] [e] << endl;
             }
+            else
             train_x [h] [e] = ((double) rand()) / ((double) RAND_MAX) * 0.35 + 0;
         }
+        r[h] = 0;
     }
     
-    for (int k = 0; k < 40; k++)
+    cout << "cluster 2" << endl;
+    for (int k = 20; k < 40; k++)
     {
         for (int m = 0; m < 2; m++)
         {
@@ -68,13 +82,56 @@ int main()
         cout << endl;
     }
     
-    int r[80] = { 0, 0 , 1, 0 , 0, 0 , 1, 0 , 0, 0 , 1, 0 , 0, 0 ,1, 0 , 0, 0 , 1, 0 ,
-        0, 0 , 1, 0 , 0, 0 , 1, 0 , 0, 0 , 1, 0 , 0, 0 , 1, 0 , 0, 0 , 1, 0 ,
-        0, 0 , 1, 0 , 0, 0 , 1, 0 , 0, 0 , 1, 0 , 0, 0 , 1, 0 , 0, 0 , 1, 0 ,
-        0, 0 , 1, 0 , 0, 0 , 1, 0 ,0, 0 , 1, 0 , 0, 0 , 1, 0 , 0, 0 , 1, 0};
+    //Cluster 3
+      for (int h = 40; h < 60; h++)
+      {
+          for( int e = 0; e < 2; e++)
+          {
+                  train_x [h] [e] = ((double) rand()) / ((double) RAND_MAX) * 1.0 + 0.70;
+          }
+          r[h] = 1;
+      }
+      
+      cout << "cluster 3" << endl;
+      for (int k = 40; k < 60; k++)
+      {
+          for (int m = 0; m < 2; m++)
+          {
+              cout << train_x[k] [m] << " ";
+          }
+          cout << endl;
+      }
+    
+    //Cluster 4
+      for (int h = 60; h < 80; h++)
+      {
+          for( int e = 0; e < 2; e++)
+          {
+              if (e == 1)
+              {
+                  train_x [h] [e] = ((double) rand()) / ((double) RAND_MAX) * 0.35+ 0.00;
+              }
+              else
+              train_x [h] [e] = ((double) rand()) / ((double) RAND_MAX) * 1.0 + 0.70;
+          }
+          r[h] = 0;
+      }
+      
+      cout << "cluster 4" << endl;
+      for (int k = 60; k < 80; k++)
+      {
+          for (int m = 0; m < 2; m++)
+          {
+              cout << train_x[k] [m] << " ";
+          }
+          cout << endl;
+      }
     
     /*float train_x [80] [2] = {
-        {-0.23 ,-0.16} ,{-0.10 ,0.85} ,{0.92 ,0.94} ,{0.89 ,0.26},
+        {-0.23 ,-0.16} ,
+        {-0.10 ,0.85} ,
+        {0.92 ,0.94} ,
+        {0.89 ,0.26},
         {0.34 ,0.01} ,{0.32 ,0.83} ,{0.98 ,0.91} ,{0.74 ,-0.15},
         {0.08 ,-0.23} ,{-0.20 ,0.88} ,{0.81 ,0.98} ,{0.85 ,-0.18},
         {-0.13 ,-0.34} ,{-0.34 ,0.91} ,{0.77 ,1.00} ,{0.96 ,0.12},
@@ -129,7 +186,7 @@ int main()
                 {
                     numcorr = numcorr + 1;
                 }
-                float delta = r[N] - y;
+                float delta = r[t] - y;
                 dw[j] = dw[j] + train_x[t][j] * delta;
             }
         }
