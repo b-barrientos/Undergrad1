@@ -31,7 +31,7 @@ int main()
         {
             for ( int e = 0; e < 2; e++)
             {
-            train_x [h] [e] = ((double)rand()) / ((double)RAND_MAX) * 0.35 + 0;
+            train_x [h] [e] = ((float)rand()) / ((float)RAND_MAX) * 0.20 + -0.10;
             }
             r[h] = 0;
         }
@@ -54,10 +54,10 @@ int main()
         {
             if (e == 1)
             {
-                train_x [h] [e] = ((double) rand()) / ((double) RAND_MAX) * 0.80 + 0.50;
+                train_x [h] [e] = ((float) rand()) / ((float) RAND_MAX) * 0.20 + 0.80;
             }
             else
-            train_x [h] [e] = ((double) rand()) / ((double) RAND_MAX) * 0.35 + 0;
+            train_x [h] [e] = ((float) rand()) / ((float) RAND_MAX) * 0.40 + -0.10;
         }
         r[h] = 0;
     }
@@ -78,7 +78,7 @@ int main()
       {
           for( int e = 0; e < 2; e++)
           {
-                  train_x [h] [e] = ((double) rand()) / ((double) RAND_MAX) * 0.80 + 0.50;
+                  train_x [h] [e] = ((float) rand()) / ((float) RAND_MAX) * 0.10 + 0.80;
           }
           r[h] = 1;
       }
@@ -101,10 +101,10 @@ int main()
           {
               if (e == 1)
               {
-                  train_x [h] [e] = ((double) rand()) / ((double) RAND_MAX) * 0.35+ 0.00;
+                  train_x [h] [e] = ((float) rand()) / ((float) RAND_MAX) * 0.20+ -0.10;
               }
               else
-              train_x [h] [e] = ((double) rand()) / ((double) RAND_MAX) * 0.80 + 0.50;
+              train_x [h] [e] = ((float) rand()) / ((float) RAND_MAX) * 0.40 + 0.60;
           }
           r[h] = 0;
       }
@@ -121,7 +121,7 @@ int main()
     cout << endl;
     
     //Declaring/Initializing eta
-    double eta = 0.5;
+    float eta = 0.5;
     
     //w random array
     float w[d];
