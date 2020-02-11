@@ -1,0 +1,10 @@
+﻿  main.cpp
+C:\Users\Bryan\Downloads\main.cpp(19,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Bryan\Downloads\main.cpp(67,74): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Bryan\Downloads\main.cpp(90,80): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Bryan\Downloads\main.cpp(93,76): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Bryan\Downloads\main.cpp(114,79): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Bryan\Downloads\main.cpp(137,82): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Bryan\Downloads\main.cpp(140,78): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Bryan\Downloads\main.cpp(159,19): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  Undergrad.vcxproj -> C:\Users\Bryan\source\repos\Undergrad\Debug\Undergrad.exe
